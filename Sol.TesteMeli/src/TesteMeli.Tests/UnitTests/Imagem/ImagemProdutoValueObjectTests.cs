@@ -1,5 +1,5 @@
 ﻿using FluentAssertions;
-using TesteMeli.Business;
+using TesteMeli.Business.Exceptions;
 using TesteMeli.Business.Language;
 using TesteMeli.Business.ValueObjects;
 using TesteMeli.Tests.Fakes;
@@ -33,7 +33,7 @@ public class ImagemProdutoValueObjectTests
         // Assert
         action
             .Should()
-            .Throw<DomainException>()
+            .Throw<CustomExceptionBase>()
             .WithMessage(string.Format(Mensagens.StrNulaOuVazia, nameof(ImagemProduto.Url)));
     }
 }

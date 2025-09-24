@@ -1,11 +1,15 @@
 using Asp.Versioning;
 using Microsoft.OpenApi.Models;
+using TesteMeli.Api.ApiConfigurations;
+using TesteMeli.Api.Middlewares;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddControllers();
+
+builder.Services.AddAbstractValidations();
 
 #region Swagger
 builder.Services.AddSwaggerGen(c =>
@@ -59,6 +63,10 @@ builder.Services.AddApiVersioning(options =>
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
+
+#region Middlewares
+app.UseMiddleware<ExceptionMiddleware>();
+#endregion
 
 app.UseHttpsRedirection();
 

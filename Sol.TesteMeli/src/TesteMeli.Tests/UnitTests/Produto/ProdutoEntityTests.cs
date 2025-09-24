@@ -1,6 +1,6 @@
 ﻿using FluentAssertions;
-using TesteMeli.Business;
 using TesteMeli.Business.Entity;
+using TesteMeli.Business.Exceptions;
 using TesteMeli.Business.Language;
 using TesteMeli.Tests.Fakes;
 
@@ -82,7 +82,7 @@ public class ProdutoEntityTests
         var action = () => produto.AdicionarAvaliacao(notaInvalida);
 
         // Assert
-        action.Should().Throw<DomainException>().WithMessage(Mensagens.NotaInvalida);
+        action.Should().Throw<CustomExceptionBase>().WithMessage(Mensagens.NotaInvalida);
     }
 
     [Fact(DisplayName = "Dado Nome Vazio, Quando Criar Produto, Então Deve Lançar Exceção")]
@@ -100,7 +100,7 @@ public class ProdutoEntityTests
         var action = () => new ProdutoEntity(nome, descricao, preco, imagem, classificacao, especificacoes);
 
         // Assert
-        action.Should().Throw<DomainException>().WithMessage(string.Format(Mensagens.StrNulaOuVazia, nameof(nome)));
+        action.Should().Throw<CustomExceptionBase>().WithMessage(string.Format(Mensagens.StrNulaOuVazia, nameof(nome)));
     }
 
     [Fact(DisplayName = "Dado Descricao Vazia, Quando Criar Produto, Então Deve Lançar Exceção")]
@@ -118,7 +118,7 @@ public class ProdutoEntityTests
         var action = () => new ProdutoEntity(nome, descricao, preco, imagem, classificacao, especificacoes);
 
         // Assert
-        action.Should().Throw<DomainException>().WithMessage(string.Format(Mensagens.StrNulaOuVazia, nameof(descricao)));
+        action.Should().Throw<CustomExceptionBase>().WithMessage(string.Format(Mensagens.StrNulaOuVazia, nameof(descricao)));
     }
 
     [Fact(DisplayName = "Dado Preco Vazio, Quando Criar Produto, Então Deve Lançar Exceção")]
@@ -136,7 +136,7 @@ public class ProdutoEntityTests
         var action = () => new ProdutoEntity(nome, descricao, null, imagem, classificacao, especificacoes);
 
         // Assert
-        action.Should().Throw<DomainException>().WithMessage(string.Format(Mensagens.ObjNulo, "preco"));
+        action.Should().Throw<CustomExceptionBase>().WithMessage(string.Format(Mensagens.ObjNulo, "preco"));
     }
 
     [Fact(DisplayName = "Adicionar Avaliação, Em Produto, Deve Recalcular Corretamente")]

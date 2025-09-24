@@ -1,4 +1,5 @@
-﻿using TesteMeli.Business.Language;
+﻿using TesteMeli.Business.Exceptions;
+using TesteMeli.Business.Language;
 
 namespace TesteMeli.Business.ValueObjects;
 
@@ -19,7 +20,7 @@ public record Classificacao
     internal Classificacao AdicionarAvaliacao(double novaNota)
     {
         if (novaNota < 0 || novaNota > 5)
-            throw new DomainException(Mensagens.NotaInvalida);
+            throw new CustomExceptionBase(Mensagens.NotaInvalida);
 
         return this with
         {

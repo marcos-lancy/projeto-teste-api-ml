@@ -1,4 +1,5 @@
-﻿using TesteMeli.Business.Language;
+﻿using TesteMeli.Business.Exceptions;
+using TesteMeli.Business.Language;
 
 namespace TesteMeli.Business.ValueObjects;
 
@@ -19,7 +20,7 @@ public record ImagemProduto
     internal ImagemProduto AdicionarImagem(string url)
     {
         if(string.IsNullOrEmpty(url))
-            throw new DomainException(string.Format(Mensagens.StrNulaOuVazia, nameof(url)));
+            throw new CustomExceptionBase(string.Format(Mensagens.StrNulaOuVazia, nameof(url)));
 
         return this with
         {

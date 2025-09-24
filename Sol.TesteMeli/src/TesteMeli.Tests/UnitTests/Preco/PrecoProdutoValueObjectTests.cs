@@ -1,5 +1,5 @@
 ﻿using FluentAssertions;
-using TesteMeli.Business;
+using TesteMeli.Business.Exceptions;
 using TesteMeli.Business.Language;
 using TesteMeli.Tests.Fakes;
 
@@ -51,7 +51,7 @@ public class PrecoValueObjectTests
         // Assert
         action
             .Should()
-            .Throw<DomainException>()
+            .Throw<CustomExceptionBase>()
             .WithMessage(string.Format(Mensagens.ValorZeroOuNegativo, "Valor"));
     }
 }

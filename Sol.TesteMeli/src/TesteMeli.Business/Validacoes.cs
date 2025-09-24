@@ -1,4 +1,5 @@
 ﻿using System.Text.RegularExpressions;
+using TesteMeli.Business.Exceptions;
 
 namespace TesteMeli.Business;
 
@@ -11,7 +12,7 @@ internal class Validacoes
     {
         if (object1.Equals(object2))
         {
-            throw new DomainException(mensagem);
+            throw new CustomExceptionBase(mensagem);
         }
     }
 
@@ -19,7 +20,7 @@ internal class Validacoes
     {
         if (!object1.Equals(object2))
         {
-            throw new DomainException(mensagem);
+            throw new CustomExceptionBase(mensagem);
         }
     }
 
@@ -29,7 +30,7 @@ internal class Validacoes
 
         if (!regex.IsMatch(valor))
         {
-            throw new DomainException(mensagem);
+            throw new CustomExceptionBase(mensagem);
         }
     }
 
@@ -38,7 +39,7 @@ internal class Validacoes
         var length = valor.Trim().Length;
         if (length > maximo)
         {
-            throw new DomainException(mensagem);
+            throw new CustomExceptionBase(mensagem);
         }
     }
 
@@ -47,7 +48,7 @@ internal class Validacoes
         var length = valor.Trim().Length;
         if (length < minimo || length > maximo)
         {
-            throw new DomainException(mensagem);
+            throw new CustomExceptionBase(mensagem);
         }
     }
 
@@ -55,7 +56,7 @@ internal class Validacoes
     {
         if (valor == null || valor.Trim().Length == 0)
         {
-            throw new DomainException(mensagem);
+            throw new CustomExceptionBase(mensagem);
         }
     }
 
@@ -63,7 +64,7 @@ internal class Validacoes
     {
         if (object1 == null)
         {
-            throw new DomainException(mensagem);
+            throw new CustomExceptionBase(mensagem);
         }
     }
 
@@ -71,7 +72,7 @@ internal class Validacoes
     {
         if (valor < minimo || valor > maximo)
         {
-            throw new DomainException(mensagem);
+            throw new CustomExceptionBase(mensagem);
         }
     }
 
@@ -79,7 +80,7 @@ internal class Validacoes
     {
         if (valor < minimo || valor > maximo)
         {
-            throw new DomainException(mensagem);
+            throw new CustomExceptionBase(mensagem);
         }
     }
 
@@ -87,7 +88,7 @@ internal class Validacoes
     {
         if (valor < minimo || valor > maximo)
         {
-            throw new DomainException(mensagem);
+            throw new CustomExceptionBase(mensagem);
         }
     }
 
@@ -95,7 +96,7 @@ internal class Validacoes
     {
         if (valor < minimo || valor > maximo)
         {
-            throw new DomainException(mensagem);
+            throw new CustomExceptionBase(mensagem);
         }
     }
 
@@ -103,7 +104,7 @@ internal class Validacoes
     {
         if (valor < minimo || valor > maximo)
         {
-            throw new DomainException(mensagem);
+            throw new CustomExceptionBase(mensagem);
         }
     }
 
@@ -111,7 +112,7 @@ internal class Validacoes
     {
         if (valor < minimo)
         {
-            throw new DomainException(mensagem);
+            throw new CustomExceptionBase(mensagem);
         }
     }
 
@@ -119,7 +120,7 @@ internal class Validacoes
     {
         if (valor < minimo)
         {
-            throw new DomainException(mensagem);
+            throw new CustomExceptionBase(mensagem);
         }
     }
 
@@ -127,7 +128,7 @@ internal class Validacoes
     {
         if (valor < minimo)
         {
-            throw new DomainException(mensagem);
+            throw new CustomExceptionBase(mensagem);
         }
     }
 
@@ -135,7 +136,7 @@ internal class Validacoes
     {
         if (valor < minimo)
         {
-            throw new DomainException(mensagem);
+            throw new CustomExceptionBase(mensagem);
         }
     }
 
@@ -143,7 +144,7 @@ internal class Validacoes
     {
         if (!boolvalor)
         {
-            throw new DomainException(mensagem);
+            throw new CustomExceptionBase(mensagem);
         }
     }
 
@@ -151,7 +152,7 @@ internal class Validacoes
     {
         if (boolvalor)
         {
-            throw new DomainException(mensagem);
+            throw new CustomExceptionBase(mensagem);
         }
     }
 }
