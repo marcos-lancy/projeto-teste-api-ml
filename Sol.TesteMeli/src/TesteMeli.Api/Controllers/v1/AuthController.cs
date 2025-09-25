@@ -3,6 +3,7 @@ using Swashbuckle.AspNetCore.Annotations;
 using System.Net;
 using TesteMeli.Api.Dtos.Auth;
 using TesteMeli.Business.Exceptions;
+using TesteMeli.Business.Interfaces;
 
 namespace TesteMeli.Api.Controllers.v1;
 
@@ -14,6 +15,13 @@ namespace TesteMeli.Api.Controllers.v1;
 [Route("api/v{version:apiVersion}/[controller]")]
 public class AuthController : MainController
 {
+    private readonly IUsuarioService _usuarioService;
+
+    public AuthController(IUsuarioService usuarioService)
+    {
+        _usuarioService = usuarioService;
+    }
+
     /// <summary>
     /// Realiza o login de um usuário.
     /// </summary>
@@ -30,6 +38,7 @@ public class AuthController : MainController
     [HttpPost("entrar")]
     public async Task<IActionResult> Entrar([FromBody] LoginRequest request)
     {
-        return Ok();
+        var resultado = await _usuarioService.EfetuarLoginAsync(request.Email, request.Senha);
+        return Ok(new LoginResponse(resultado));
     }
 }

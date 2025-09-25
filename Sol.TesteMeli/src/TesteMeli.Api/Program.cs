@@ -1,7 +1,14 @@
 using Asp.Versioning;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using System.Security.Claims;
+using System.Text;
 using TesteMeli.Api.ApiConfigurations;
 using TesteMeli.Api.Middlewares;
+using TesteMeli.Business.ApiSettings;
+using TesteMeli.Business.Interfaces;
+using TesteMeli.Business.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,7 +16,10 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 
+#region DIs
 builder.Services.AddAbstractValidations();
+builder.Services.AddScoped<IUsuarioService, UsuarioService>();
+#endregion
 
 #region Swagger
 builder.Services.AddSwaggerGen(c =>
@@ -58,6 +68,34 @@ builder.Services.AddApiVersioning(options =>
     options.GroupNameFormat = "'v'V";
     options.SubstituteApiVersionInUrl = true;
 });
+#endregion
+
+#region Jwt
+builder.Services.Configure<JwtSettings>(builder.Configuration.GetSection("JwtSettings"));
+builder.Services.AddSingleton<IJwtService, JwtService>();
+
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+})
+.AddJwtBearer(options =>
+{
+    var jwtSettings = builder.Configuration.GetSection("JwtSettings").Get<JwtSettings>();
+    options.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidateIssuer = true,
+        ValidateAudience = true,
+        ValidateLifetime = true,
+        ValidateIssuerSigningKey = true,
+        ValidIssuer = jwtSettings?.Issuer,
+        ValidAudience = jwtSettings?.Audience,
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSettings?.SecretKey)),
+        RoleClaimType = ClaimTypes.Role,
+    };
+});
+
+builder.Services.AddAuthorization();
 #endregion
 
 var app = builder.Build();
