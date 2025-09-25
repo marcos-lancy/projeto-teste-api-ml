@@ -4,7 +4,7 @@ using TesteMeli.Business.Interfaces;
 
 namespace TesteMeli.Business.Services;
 
-public class UsuarioService : IUsuarioService
+public sealed class UsuarioService : IUsuarioService
 {
     private readonly IJwtService _jwtService;
     private readonly ILogger<UsuarioService> _logger;

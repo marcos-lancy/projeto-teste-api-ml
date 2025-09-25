@@ -61,7 +61,7 @@ namespace TesteMeli.Business.Language {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Nota deve ser entre 0 e 5..
+        ///   Looks up a localized string similar to Classificação deve ser entre 0 e 5..
         /// </summary>
         public static string NotaInvalida {
             get {

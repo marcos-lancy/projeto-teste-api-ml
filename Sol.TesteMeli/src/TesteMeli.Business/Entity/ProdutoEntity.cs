@@ -41,6 +41,20 @@ public class ProdutoEntity : EntityBase<Guid>, IEntityBase<Guid>, IAggregateRoot
         Validation();
     }
 
+    public ProdutoEntity(Guid id, string nome, string descricao, Preco preco,
+    ImagemProduto imagem, Classificacao classificacao,
+    Dictionary<string, string> especificacoes) : base(id)
+    {
+        Nome = nome;
+        Descricao = descricao;
+        Preco = preco;
+        Imagem = imagem;
+        Classificacao = classificacao;
+        Especificacoes = especificacoes ?? new Dictionary<string, string>();
+
+        Validation();
+    }
+
     public void AdicionarImagem(string url)
     {
         Imagem = Imagem.AdicionarImagem(url);

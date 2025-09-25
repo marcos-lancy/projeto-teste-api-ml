@@ -12,7 +12,7 @@ internal class Validacoes
     {
         if (object1.Equals(object2))
         {
-            throw new CustomExceptionBase(mensagem);
+            throw new BussinessException(mensagem);
         }
     }
 
@@ -20,7 +20,7 @@ internal class Validacoes
     {
         if (!object1.Equals(object2))
         {
-            throw new CustomExceptionBase(mensagem);
+            throw new BussinessException(mensagem);
         }
     }
 
@@ -30,7 +30,7 @@ internal class Validacoes
 
         if (!regex.IsMatch(valor))
         {
-            throw new CustomExceptionBase(mensagem);
+            throw new BussinessException(mensagem);
         }
     }
 
@@ -39,7 +39,7 @@ internal class Validacoes
         var length = valor.Trim().Length;
         if (length > maximo)
         {
-            throw new CustomExceptionBase(mensagem);
+            throw new BussinessException(mensagem);
         }
     }
 
@@ -48,7 +48,7 @@ internal class Validacoes
         var length = valor.Trim().Length;
         if (length < minimo || length > maximo)
         {
-            throw new CustomExceptionBase(mensagem);
+            throw new BussinessException(mensagem);
         }
     }
 
@@ -56,7 +56,7 @@ internal class Validacoes
     {
         if (valor == null || valor.Trim().Length == 0)
         {
-            throw new CustomExceptionBase(mensagem);
+            throw new BussinessException(mensagem);
         }
     }
 
@@ -64,7 +64,7 @@ internal class Validacoes
     {
         if (object1 == null)
         {
-            throw new CustomExceptionBase(mensagem);
+            throw new BussinessException(mensagem);
         }
     }
 
@@ -72,7 +72,7 @@ internal class Validacoes
     {
         if (valor < minimo || valor > maximo)
         {
-            throw new CustomExceptionBase(mensagem);
+            throw new BussinessException(mensagem);
         }
     }
 
@@ -80,7 +80,7 @@ internal class Validacoes
     {
         if (valor < minimo || valor > maximo)
         {
-            throw new CustomExceptionBase(mensagem);
+            throw new BussinessException(mensagem);
         }
     }
 
@@ -88,7 +88,7 @@ internal class Validacoes
     {
         if (valor < minimo || valor > maximo)
         {
-            throw new CustomExceptionBase(mensagem);
+            throw new BussinessException(mensagem);
         }
     }
 
@@ -96,7 +96,7 @@ internal class Validacoes
     {
         if (valor < minimo || valor > maximo)
         {
-            throw new CustomExceptionBase(mensagem);
+            throw new BussinessException(mensagem);
         }
     }
 
@@ -104,7 +104,7 @@ internal class Validacoes
     {
         if (valor < minimo || valor > maximo)
         {
-            throw new CustomExceptionBase(mensagem);
+            throw new BussinessException(mensagem);
         }
     }
 
@@ -112,7 +112,7 @@ internal class Validacoes
     {
         if (valor < minimo)
         {
-            throw new CustomExceptionBase(mensagem);
+            throw new BussinessException(mensagem);
         }
     }
 
@@ -120,7 +120,7 @@ internal class Validacoes
     {
         if (valor < minimo)
         {
-            throw new CustomExceptionBase(mensagem);
+            throw new BussinessException(mensagem);
         }
     }
 
@@ -128,7 +128,7 @@ internal class Validacoes
     {
         if (valor < minimo)
         {
-            throw new CustomExceptionBase(mensagem);
+            throw new BussinessException(mensagem);
         }
     }
 
@@ -136,7 +136,7 @@ internal class Validacoes
     {
         if (valor < minimo)
         {
-            throw new CustomExceptionBase(mensagem);
+            throw new BussinessException(mensagem);
         }
     }
 
@@ -144,7 +144,7 @@ internal class Validacoes
     {
         if (!boolvalor)
         {
-            throw new CustomExceptionBase(mensagem);
+            throw new BussinessException(mensagem);
         }
     }
 
@@ -152,7 +152,7 @@ internal class Validacoes
     {
         if (boolvalor)
         {
-            throw new CustomExceptionBase(mensagem);
+            throw new BussinessException(mensagem);
         }
     }
 }

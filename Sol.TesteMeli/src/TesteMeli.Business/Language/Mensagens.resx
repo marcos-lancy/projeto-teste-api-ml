@@ -130,6 +130,6 @@
     <value>A porcentagem informada deve ser de 0 até 100.</value>
   </data>
   <data name="NotaInvalida" xml:space="preserve">
-    <value>Nota deve ser entre 0 e 5.</value>
+    <value>Classificação deve ser entre 0 e 5.</value>
   </data>
 </root>

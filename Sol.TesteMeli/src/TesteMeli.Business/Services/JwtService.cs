@@ -8,7 +8,7 @@ using TesteMeli.Business.Interfaces;
 
 namespace TesteMeli.Business.Services;
 
-public class JwtService : IJwtService
+public sealed class JwtService : IJwtService
 {
     private readonly JwtSettings _settings;
 

@@ -1,30 +1,53 @@
-# See https://aka.ms/customizecontainer to learn how to customize your debug container and how Visual Studio uses this Dockerfile to build your images for faster debugging.
-
-# This stage is used when running from VS in fast mode (Default for Debug configuration)
 FROM mcr.microsoft.com/dotnet/aspnet:9.0 AS base
-USER $APP_UID
 WORKDIR /app
+
+# Expose ports (padrão .NET + debug)
 EXPOSE 8080
 EXPOSE 8081
 
-
-# This stage is used to build the service project
+# Build stage
 FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
-ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
+
+# Cache de dependências - Melhora performance do build
 COPY ["src/TesteMeli.Api/TesteMeli.Api.csproj", "src/TesteMeli.Api/"]
-RUN dotnet restore "./src/TesteMeli.Api/TesteMeli.Api.csproj"
+COPY ["src/TesteMeli.Business/TesteMeli.Business.csproj", "src/TesteMeli.Business/"]
+COPY ["src/TesteMeli.Data/TesteMeli.Data.csproj", "src/TesteMeli.Data/"]
+
+RUN dotnet restore "src/TesteMeli.Api/TesteMeli.Api.csproj"
+
 COPY . .
 WORKDIR "/src/src/TesteMeli.Api"
-RUN dotnet build "./TesteMeli.Api.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
-# This stage is used to publish the service project to be copied to the final stage
+# Build com otimizações
+RUN dotnet build "TesteMeli.Api.csproj" -c Release -o /app/build \
+    --no-restore
+
+# Publish stage
 FROM build AS publish
-ARG BUILD_CONFIGURATION=Release
-RUN dotnet publish "./TesteMeli.Api.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "TesteMeli.Api.csproj" -c Release -o /app/publish \
+    --no-restore \
+    /p:UseAppHost=false
 
-# This stage is used in production or when running from VS in regular mode (Default when not using the Debug configuration)
 FROM base AS final
 WORKDIR /app
+
+# Labels para documentação
+LABEL maintainer="email_aqui@email.com"
+LABEL description="API TesteMeli"
+LABEL version="1.0.0"
+
+# Copia os arquivos publicados
 COPY --from=publish /app/publish .
+
+# Diretório para dados da aplicação (importante para seu JSON repository)
+RUN mkdir -p /app/data && \
+    chmod 755 /app/data
+
+USER $APP_UID
+
+# Variáveis de ambiente para configuração
+ENV ASPNETCORE_ENVIRONMENT=Production
+ENV DOTNET_RUNNING_IN_CONTAINER=true
+
 ENTRYPOINT ["dotnet", "TesteMeli.Api.dll"]

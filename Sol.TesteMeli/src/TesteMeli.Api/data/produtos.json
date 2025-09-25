@@ -1,0 +1,82 @@
+[
+  {
+    "id": "bb6fda16-e748-4b26-98aa-750d58c303d7",
+    "nome": "A MacBook Pro",
+    "descricao": "MacBook Pro com chip M1, ideal para desenvolvimento e design",
+    "preco": {
+      "valor": 12000.00,
+      "moeda": "BRL"
+    },
+    "imagem": {
+      "url": "https://exemplo.com/macbook.jpg"
+    },
+    "classificacao": {
+      "valor": 4.8
+    },
+    "especificacoes": {
+      "Processador": "Apple M1",
+      "RAM": "16GB",
+      "Armazenamento": "1TB SSD",
+      "Tela": "16 polegadas Retina"
+    }
+  },
+  {
+    "id": "9f54c0d6-a579-410d-b2a4-f45412e75cd6",
+    "nome": "b Cafeteira ex EXCLUIR",
+    "descricao": "Cafeteira prepara 5 x\u00EDcaras",
+    "preco": {
+      "valor": 19.99,
+      "moeda": "BRL"
+    },
+    "imagem": {
+      "url": "https://google.com/img/cafereira.png"
+    },
+    "classificacao": {
+      "valor": 0
+    },
+    "especificacoes": {
+      "Quantidade de preparo": "cinco x\u00EDcaras",
+      "Qtdd de pe\u00E7as na caixa": "total de 3 pe\u00E7as"
+    }
+  },
+  {
+    "id": "A022B7DB-6570-4486-9631-B412DC4FB67A",
+    "nome": "C MacBook Pro",
+    "descricao": "MacBook Pro com chip M1, ideal para desenvolvimento e design",
+    "preco": {
+      "valor": 12000.00,
+      "moeda": "BRL"
+    },
+    "imagem": {
+      "url": "https://exemplo.com/macbook.jpg"
+    },
+    "classificacao": {
+      "valor": 4.8
+    },
+    "especificacoes": {
+      "Processador": "Apple M1",
+      "RAM": "16GB",
+      "Armazenamento": "1TB SSD",
+      "Tela": "16 polegadas Retina"
+    }
+  },
+  {
+    "id": "DA14D0F2-3088-4A94-9F5E-134404731FE4",
+    "nome": "D Cafeteira ex EXCLUIR",
+    "descricao": "Cafeteira prepara 5 x\u00EDcaras",
+    "preco": {
+      "valor": 19.99,
+      "moeda": "BRL"
+    },
+    "imagem": {
+      "url": "https://google.com/img/cafereira.png"
+    },
+    "classificacao": {
+      "valor": 0
+    },
+    "especificacoes": {
+      "Quantidade de preparo": "cinco x\u00EDcaras",
+      "Qtdd de pe\u00E7as na caixa": "total de 3 pe\u00E7as"
+    }
+  }
+]
