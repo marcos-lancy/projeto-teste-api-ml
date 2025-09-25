@@ -2,8 +2,8 @@
 using Swashbuckle.AspNetCore.Annotations;
 using System.Net;
 using TesteMeli.Api.Dtos.Auth;
-using TesteMeli.Business.Exceptions;
 using TesteMeli.Business.Interfaces;
+using TesteMeli.Sahred.Exceptions;
 
 namespace TesteMeli.Api.Controllers.v1;
 

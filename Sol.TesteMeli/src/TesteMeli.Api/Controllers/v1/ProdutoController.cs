@@ -5,10 +5,10 @@ using System.Globalization;
 using System.Net;
 using TesteMeli.Api.Dtos.Produto;
 using TesteMeli.Business.Entity;
-using TesteMeli.Business.Exceptions;
 using TesteMeli.Business.Interfaces;
 using TesteMeli.Business.ValueObjects;
-using TesteMeli.Data.Repositories.Produto.Dtos;
+using TesteMeli.Sahred.Enum;
+using TesteMeli.Sahred.Exceptions;
 
 namespace TesteMeli.Api.Controllers.v1;
 

@@ -1,5 +1,5 @@
-﻿using TesteMeli.Business.Exceptions;
-using TesteMeli.Business.Language;
+﻿using TesteMeli.Sahred.Exceptions;
+using TesteMeli.Sahred.Language;
 
 namespace TesteMeli.Business.ValueObjects;
 

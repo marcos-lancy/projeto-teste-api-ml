@@ -1,6 +1,6 @@
 ﻿using System.Runtime.Serialization;
 
-namespace TesteMeli.Business.Exceptions;
+namespace TesteMeli.Sahred.Exceptions;
 
 [Serializable]
 public class AuthenticationException : CustomExceptionBase

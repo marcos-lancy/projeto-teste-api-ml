@@ -1,4 +1,4 @@
-﻿namespace TesteMeli.Business.Exceptions;
+﻿namespace TesteMeli.Sahred.Exceptions;
 
 public class ErrorResponse(
 int statusCode,

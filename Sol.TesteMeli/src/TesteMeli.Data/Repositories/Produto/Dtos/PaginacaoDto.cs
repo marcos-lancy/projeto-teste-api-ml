@@ -1,4 +1,6 @@
-﻿namespace TesteMeli.Data.Repositories.Produto.Dtos;
+﻿using TesteMeli.Sahred.Enum;
+
+namespace TesteMeli.Data.Repositories.Produto.Dtos;
 
 public record PaginacaoDto<T>(
     IReadOnlyList<T> Itens,

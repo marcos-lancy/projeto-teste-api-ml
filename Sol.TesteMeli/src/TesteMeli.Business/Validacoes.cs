@@ -1,5 +1,5 @@
 ﻿using System.Text.RegularExpressions;
-using TesteMeli.Business.Exceptions;
+using TesteMeli.Sahred.Exceptions;
 
 namespace TesteMeli.Business;
 

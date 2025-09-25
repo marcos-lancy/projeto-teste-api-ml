@@ -1,4 +1,4 @@
-﻿namespace TesteMeli.Data.Repositories.Produto.Dtos;
+﻿namespace TesteMeli.Sahred.Enum;
 
 public enum OrdenacaoProduto
 {

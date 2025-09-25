@@ -1,4 +1,5 @@
 ﻿using TesteMeli.Data.Repositories.Produto.Dtos;
+using TesteMeli.Sahred.Enum;
 
 namespace TesteMeli.Data.Repositories.Produto;
 

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36310.24 d17.14
+VisualStudioVersion = 17.14.36310.24
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TesteMeli.Api", "src\TesteMeli.Api\TesteMeli.Api.csproj", "{0C56C505-FD8B-4443-8054-C12D0BB51079}"
 EndProject
@@ -10,6 +10,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TesteMeli.Data", "src\TesteMeli.Data\TesteMeli.Data.csproj", "{84C7D219-9121-4C98-B786-B53EC8B61581}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TesteMeli.Tests", "src\TesteMeli.Tests\TesteMeli.Tests.csproj", "{03053DF4-678E-4D5C-89D1-5E3DE1F36D75}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TesteMeli.Sahred", "src\TesteMeli.Sahred\TesteMeli.Sahred.csproj", "{F6318E81-D27C-434C-894F-64D87BEBF48C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{03053DF4-678E-4D5C-89D1-5E3DE1F36D75}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{03053DF4-678E-4D5C-89D1-5E3DE1F36D75}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{03053DF4-678E-4D5C-89D1-5E3DE1F36D75}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6318E81-D27C-434C-894F-64D87BEBF48C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6318E81-D27C-434C-894F-64D87BEBF48C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6318E81-D27C-434C-894F-64D87BEBF48C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6318E81-D27C-434C-894F-64D87BEBF48C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

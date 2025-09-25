@@ -1,6 +1,6 @@
 ﻿using FluentAssertions;
-using TesteMeli.Business.Exceptions;
-using TesteMeli.Business.Language;
+using TesteMeli.Sahred.Exceptions;
+using TesteMeli.Sahred.Language;
 using TesteMeli.Tests.Fakes;
 
 namespace TesteMeli.Tests.UnitTests.Preco;

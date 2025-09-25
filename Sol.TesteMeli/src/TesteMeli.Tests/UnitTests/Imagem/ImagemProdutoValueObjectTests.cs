@@ -1,7 +1,7 @@
 ﻿using FluentAssertions;
-using TesteMeli.Business.Exceptions;
-using TesteMeli.Business.Language;
 using TesteMeli.Business.ValueObjects;
+using TesteMeli.Sahred.Exceptions;
+using TesteMeli.Sahred.Language;
 using TesteMeli.Tests.Fakes;
 
 namespace TesteMeli.Tests.UnitTests.Imagem;

@@ -1,6 +1,6 @@
 ﻿using System.Net;
 using System.Text.Json;
-using TesteMeli.Business.Exceptions;
+using TesteMeli.Sahred.Exceptions;
 
 namespace TesteMeli.Api.Middlewares;
 

@@ -1,6 +1,6 @@
 ﻿using TesteMeli.Business.Interfaces;
-using TesteMeli.Business.Language;
 using TesteMeli.Business.ValueObjects;
+using TesteMeli.Sahred.Language;
 
 namespace TesteMeli.Business.Entity;
 

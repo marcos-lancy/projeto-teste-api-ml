@@ -26,6 +26,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\TesteMeli.Business\TesteMeli.Business.csproj" />
+    <ProjectReference Include="..\TesteMeli.Sahred\TesteMeli.Sahred.csproj" />
   </ItemGroup>
 
 </Project>
