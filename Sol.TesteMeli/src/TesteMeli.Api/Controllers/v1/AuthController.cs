@@ -3,7 +3,7 @@ using Swashbuckle.AspNetCore.Annotations;
 using System.Net;
 using TesteMeli.Api.Dtos.Auth;
 using TesteMeli.Business.Interfaces;
-using TesteMeli.Sahred.Exceptions;
+using TesteMeli.Shared.Exceptions;
 
 namespace TesteMeli.Api.Controllers.v1;
 

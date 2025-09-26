@@ -4,8 +4,8 @@ using TesteMeli.Business.Interfaces;
 using TesteMeli.Business.ValueObjects;
 using TesteMeli.Data.Repositories.Produto;
 using TesteMeli.Data.Repositories.Produto.Dtos;
-using TesteMeli.Sahred.Enum;
-using TesteMeli.Sahred.Exceptions;
+using TesteMeli.Shared.Enum;
+using TesteMeli.Shared.Exceptions;
 
 namespace TesteMeli.Business.Services;
 

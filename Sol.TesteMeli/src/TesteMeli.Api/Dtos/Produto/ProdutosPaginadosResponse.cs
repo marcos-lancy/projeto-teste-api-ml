@@ -1,4 +1,4 @@
-﻿using TesteMeli.Sahred.Enum;
+﻿using TesteMeli.Shared.Enum;
 
 namespace TesteMeli.Api.Dtos.Produto;
 

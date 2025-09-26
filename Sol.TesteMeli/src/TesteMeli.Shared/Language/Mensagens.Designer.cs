@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TesteMeli.Sahred.Language {
+namespace TesteMeli.Shared.Language {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace TesteMeli.Sahred.Language {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("TesteMeli.Sahred.Language.Mensagens", typeof(Mensagens).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("TesteMeli.Shared.Language.Mensagens", typeof(Mensagens).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

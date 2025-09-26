@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc.Filters;
 using SharpGrip.FluentValidation.AutoValidation.Mvc.Results;
 using System.Net;
-using TesteMeli.Sahred.Exceptions;
+using TesteMeli.Shared.Exceptions;
 
 namespace TesteMeli.Api.ApiConfigurations;
 

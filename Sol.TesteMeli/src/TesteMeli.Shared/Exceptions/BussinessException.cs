@@ -1,6 +1,6 @@
 ﻿using System.Runtime.Serialization;
 
-namespace TesteMeli.Sahred.Exceptions;
+namespace TesteMeli.Shared.Exceptions;
 
 /// <summary>
 /// Exceção para falha de validação de negócio (400)

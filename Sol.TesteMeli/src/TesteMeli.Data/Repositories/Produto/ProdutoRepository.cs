@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using TesteMeli.Data.Repositories.Produto.Dtos;
-using TesteMeli.Sahred.Enum;
+using TesteMeli.Shared.Enum;
 
 namespace TesteMeli.Data.Repositories.Produto;
 

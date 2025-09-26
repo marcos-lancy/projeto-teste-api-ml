@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TesteMeli.Data", "src\Teste
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TesteMeli.Tests", "src\TesteMeli.Tests\TesteMeli.Tests.csproj", "{03053DF4-678E-4D5C-89D1-5E3DE1F36D75}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TesteMeli.Sahred", "src\TesteMeli.Sahred\TesteMeli.Sahred.csproj", "{F6318E81-D27C-434C-894F-64D87BEBF48C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TesteMeli.Shared", "src\TesteMeli.Shared\TesteMeli.Shared.csproj", "{8D422113-533B-5355-D2D9-19F1AA9A317C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,10 +35,10 @@ Global
 		{03053DF4-678E-4D5C-89D1-5E3DE1F36D75}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{03053DF4-678E-4D5C-89D1-5E3DE1F36D75}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{03053DF4-678E-4D5C-89D1-5E3DE1F36D75}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F6318E81-D27C-434C-894F-64D87BEBF48C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F6318E81-D27C-434C-894F-64D87BEBF48C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F6318E81-D27C-434C-894F-64D87BEBF48C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F6318E81-D27C-434C-894F-64D87BEBF48C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D422113-533B-5355-D2D9-19F1AA9A317C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D422113-533B-5355-D2D9-19F1AA9A317C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D422113-533B-5355-D2D9-19F1AA9A317C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D422113-533B-5355-D2D9-19F1AA9A317C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

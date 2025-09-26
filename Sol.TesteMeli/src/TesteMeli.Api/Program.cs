@@ -11,7 +11,7 @@ using TesteMeli.Api.Middlewares;
 using TesteMeli.Business.Interfaces;
 using TesteMeli.Business.Services;
 using TesteMeli.Data.Repositories.Produto;
-using TesteMeli.Sahred.ApiSettings;
+using TesteMeli.Shared.ApiSettings;
 
 var builder = WebApplication.CreateBuilder(args);
 

@@ -1,6 +1,6 @@
 ﻿using TesteMeli.Business.Entity;
 using TesteMeli.Data.Repositories.Produto.Dtos;
-using TesteMeli.Sahred.Enum;
+using TesteMeli.Shared.Enum;
 
 namespace TesteMeli.Business.Interfaces;
 

@@ -14,7 +14,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\TesteMeli.Data\TesteMeli.Data.csproj" />
-    <ProjectReference Include="..\TesteMeli.Sahred\TesteMeli.Sahred.csproj" />
+    <ProjectReference Include="..\TesteMeli.Shared\TesteMeli.Shared.csproj" />
   </ItemGroup>
 
 </Project>

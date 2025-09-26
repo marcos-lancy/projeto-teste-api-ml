@@ -1,4 +1,4 @@
-﻿namespace TesteMeli.Sahred.Enum;
+﻿namespace TesteMeli.Shared.Enum;
 
 public enum OrdenacaoProduto
 {

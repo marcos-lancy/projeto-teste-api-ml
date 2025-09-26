@@ -1,7 +1,7 @@
 ﻿using FluentAssertions;
 using TesteMeli.Business.Entity;
-using TesteMeli.Sahred.Exceptions;
-using TesteMeli.Sahred.Language;
+using TesteMeli.Shared.Exceptions;
+using TesteMeli.Shared.Language;
 using TesteMeli.Tests.Fakes;
 
 namespace TesteMeli.Tests.UnitTests.Produto;

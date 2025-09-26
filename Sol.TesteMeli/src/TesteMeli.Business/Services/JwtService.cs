@@ -4,7 +4,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using TesteMeli.Business.Interfaces;
-using TesteMeli.Sahred.ApiSettings;
+using TesteMeli.Shared.ApiSettings;
 
 namespace TesteMeli.Business.Services;
 

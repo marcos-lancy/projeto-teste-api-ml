@@ -7,8 +7,8 @@ using TesteMeli.Api.Dtos.Produto;
 using TesteMeli.Business.Entity;
 using TesteMeli.Business.Interfaces;
 using TesteMeli.Business.ValueObjects;
-using TesteMeli.Sahred.Enum;
-using TesteMeli.Sahred.Exceptions;
+using TesteMeli.Shared.Enum;
+using TesteMeli.Shared.Exceptions;
 
 namespace TesteMeli.Api.Controllers.v1;
 

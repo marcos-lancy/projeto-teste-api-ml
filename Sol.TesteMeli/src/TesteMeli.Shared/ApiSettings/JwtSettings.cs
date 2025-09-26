@@ -1,4 +1,4 @@
-﻿namespace TesteMeli.Sahred.ApiSettings;
+﻿namespace TesteMeli.Shared.ApiSettings;
 
 /// <summary>
 /// Classe de configuração para JWT.

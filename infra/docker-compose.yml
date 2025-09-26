@@ -2,16 +2,19 @@ version: '3.8'
 
 services:
   testemeli-api:
+    container_name: testemeli-api
     image: testemeli-api:latest
     build:
       context: ../Sol.TesteMeli
-      dockerfile: ../Sol.TesteMeli/src/TesteMeli.Api/Dockerfile
+      dockerfile: src/TesteMeli.Api/Dockerfile
     ports:
       - "8080:8080"
       - "8081:8081"
     environment:
       - ASPNETCORE_ENVIRONMENT=Production
       - DOTNET_RUNNING_IN_CONTAINER=true
+      - DOTNET_USE_POLLING_FILE_WATCHER=1
+      - DOTNET_HOST_PATH=/app
     volumes:
       - testemeli_data:/app/data
     restart: unless-stopped

@@ -1,4 +1,4 @@
-﻿using TesteMeli.Sahred.Language;
+﻿using TesteMeli.Shared.Language;
 
 namespace TesteMeli.Business.ValueObjects;
 

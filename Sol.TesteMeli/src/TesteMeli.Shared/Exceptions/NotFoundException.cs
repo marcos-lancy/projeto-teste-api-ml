@@ -1,6 +1,6 @@
 ﻿using System.Runtime.Serialization;
 
-namespace TesteMeli.Sahred.Exceptions;
+namespace TesteMeli.Shared.Exceptions;
 
 [Serializable]
 public class NotFoundException : CustomExceptionBase

@@ -1,7 +1,7 @@
 FROM mcr.microsoft.com/dotnet/aspnet:9.0 AS base
 WORKDIR /app
 
-# Expose ports (padrão .NET + debug)
+# Expose ports (padrÃ£o .NET + debug)
 EXPOSE 8080
 EXPOSE 8081
 
@@ -9,17 +9,18 @@ EXPOSE 8081
 FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
 WORKDIR /src
 
-# Cache de dependências - Melhora performance do build
+# Cache de dependÃªncias - Melhora performance do build
 COPY ["src/TesteMeli.Api/TesteMeli.Api.csproj", "src/TesteMeli.Api/"]
 COPY ["src/TesteMeli.Business/TesteMeli.Business.csproj", "src/TesteMeli.Business/"]
 COPY ["src/TesteMeli.Data/TesteMeli.Data.csproj", "src/TesteMeli.Data/"]
+COPY ["src/TesteMeli.Shared/TesteMeli.Shared.csproj", "src/TesteMeli.Shared/"]
 
 RUN dotnet restore "src/TesteMeli.Api/TesteMeli.Api.csproj"
 
 COPY . .
 WORKDIR "/src/src/TesteMeli.Api"
 
-# Build com otimizações
+# Build com otimizaÃ§Ãµes
 RUN dotnet build "TesteMeli.Api.csproj" -c Release -o /app/build \
     --no-restore
 
@@ -32,7 +33,7 @@ RUN dotnet publish "TesteMeli.Api.csproj" -c Release -o /app/publish \
 FROM base AS final
 WORKDIR /app
 
-# Labels para documentação
+# Labels para documentaÃ§Ã£o
 LABEL maintainer="email_aqui@email.com"
 LABEL description="API TesteMeli"
 LABEL version="1.0.0"
@@ -40,13 +41,13 @@ LABEL version="1.0.0"
 # Copia os arquivos publicados
 COPY --from=publish /app/publish .
 
-# Diretório para dados da aplicação (importante para seu JSON repository)
+# DiretÃ³rio para dados da aplicaÃ§Ã£o (importante para seu JSON repository)
 RUN mkdir -p /app/data && \
     chmod 755 /app/data
 
 USER $APP_UID
 
-# Variáveis de ambiente para configuração
+# VariÃ¡veis de ambiente para configuraÃ§Ã£o
 ENV ASPNETCORE_ENVIRONMENT=Production
 ENV DOTNET_RUNNING_IN_CONTAINER=true
 
