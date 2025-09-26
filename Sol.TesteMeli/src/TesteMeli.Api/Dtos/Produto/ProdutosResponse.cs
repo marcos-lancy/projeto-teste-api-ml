@@ -3,15 +3,9 @@
 public record ProdutosResponse(
     Guid Id,
     string Nome,
+    string ImagemUrl,
     string Descricao,
-    PrecoResponse Preco,
-    ImagemResponse Imagem,
-    ClassificacaoResponse Classificacao,
+    string Preco,
+    double Classificacao,
     Dictionary<string, string> Especificacoes
 );
-
-public record PrecoResponse(string Valor, string Moeda);
-
-public record ImagemResponse(string Url);
-
-public record ClassificacaoResponse(double Valor);

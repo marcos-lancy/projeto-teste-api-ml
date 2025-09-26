@@ -105,16 +105,11 @@ public sealed class ProdutoRepository : RepositoryBase<ProdutoDto>, IProdutoRepo
         };
     }
 
-    // Método auxiliar para ordenação simples
-    public async Task<IReadOnlyList<ProdutoDto>> ObterTodosOrdenadosAsync(OrdenacaoProduto ordenacao)
+    public async Task<ProdutoDto?> ObterPorIdAsync(Guid id)
     {
-        var produtosOrdenados = AplicarOrdenacao(Dados, ordenacao).ToList().AsReadOnly();
-        return await Task.FromResult(produtosOrdenados);
+        return await ObterObjetoStreamingAsync(element =>
+            element.TryGetProperty("id", out var idProp) &&
+            Guid.TryParse(idProp.GetString(), out var guid) &&
+            guid == id);
     }
-
-    public async Task<ProdutoDto> ObterPorIdAsync(Guid id)
-        => await Task.FromResult(Dados.FirstOrDefault(p => p.Id == id));
-
-    public async Task<bool> ExisteAsync(Guid id)
-        => await Task.FromResult(Dados.Any(p => p.Id == id));
 }

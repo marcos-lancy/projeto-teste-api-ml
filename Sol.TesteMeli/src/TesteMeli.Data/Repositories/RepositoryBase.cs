@@ -33,6 +33,46 @@ public abstract class RepositoryBase<T> where T : class
         CarregarDados();
     }
 
+    #region Streaming
+
+    /// <summary>
+    /// Lê um objeto do JSON diretamente via streaming, sem carregar tudo em memória.
+    /// Ideal para buscas por Id em arquivos grandes.
+    /// </summary>
+    protected async Task<T?> ObterObjetoStreamingAsync(Func<JsonElement, bool> predicate)
+    {
+        try
+        {
+            await using var fs = File.OpenRead(_caminhoArquivo);
+            using var reader = new StreamReader(fs);
+
+            var buffer = await File.ReadAllBytesAsync(_caminhoArquivo);
+            var jsonReader = new Utf8JsonReader(buffer);
+
+            while (jsonReader.Read())
+            {
+                if (jsonReader.TokenType == JsonTokenType.StartObject)
+                {
+                    using var doc = JsonDocument.ParseValue(ref jsonReader);
+                    var element = doc.RootElement;
+
+                    if (predicate(element))
+                    {
+                        return JsonSerializer.Deserialize<T>(element.GetRawText(), _jsonOptions);
+                    }
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, $"[RepositoryBase] ERRO ao ler streaming de {_caminhoArquivo}");
+        }
+
+        return null;
+    }
+
+    #endregion
+
     private void CarregarDados()
     {
         try

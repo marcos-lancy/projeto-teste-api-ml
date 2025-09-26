@@ -12,6 +12,5 @@ public interface IProdutoRepository
         int pagina = 1,
         int itensPorPagina = 10,
         OrdenacaoProduto ordenacao = OrdenacaoProduto.NomeAscendente);
-    Task<ProdutoDto> ObterPorIdAsync(Guid id);
-    Task<bool> ExisteAsync(Guid id);
+    Task<ProdutoDto?> ObterPorIdAsync(Guid id);
 }

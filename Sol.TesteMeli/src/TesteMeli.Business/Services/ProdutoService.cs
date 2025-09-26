@@ -30,7 +30,8 @@ public sealed class ProdutoService : IProdutoService
 
     public async Task AtualizarAsync(ProdutoEntity produto)
     {
-        if(!await _produtoRepository.ExisteAsync(produto.Id))
+        var produtoExistente = await _produtoRepository.ObterPorIdAsync(produto.Id);
+        if (produtoExistente is null)
         {
             _logger.LogWarning($"Atualizar. Produto de ID: {produto.Id} não com encontrado.");
             throw new NotFoundException();
@@ -41,7 +42,8 @@ public sealed class ProdutoService : IProdutoService
 
     public async Task RemoverAsync(Guid id)
     {
-        if (!await _produtoRepository.ExisteAsync(id))
+        var produtoExistente = await _produtoRepository.ObterPorIdAsync(id);
+        if (produtoExistente is null)
         {
             _logger.LogWarning($"Remover. Produto de ID: {id} não com encontrado.");
             throw new NotFoundException();

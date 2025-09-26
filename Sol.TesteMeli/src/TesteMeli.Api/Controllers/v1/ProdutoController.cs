@@ -48,10 +48,10 @@ public class ProdutosController : MainController
             Itens: resultadoPaginado.Itens.Select(p => new ProdutosResponse(
                 p.Id,
                 p.Nome,
+                p.Imagem.Url,
                 p.Descricao,
-                new PrecoResponse(p.Preco.Valor.ToString("C", new CultureInfo("pt-BR")), p.Preco.Moeda),
-                new ImagemResponse(p.Imagem.Url),
-                new ClassificacaoResponse(p.Classificacao.Valor),
+                p.Preco.Valor.ToString("C", new CultureInfo("pt-BR")),
+                p.Classificacao.Valor,
                 p.Especificacoes
             )).ToList().AsReadOnly(),
             PaginaAtual: resultadoPaginado.PaginaAtual,
@@ -86,10 +86,10 @@ public class ProdutosController : MainController
         (
             produto.Id,
             produto.Nome,
+            produto.Imagem.Url,
             produto.Descricao,
-            new PrecoResponse(produto.Preco.Valor.ToString("C", new CultureInfo("pt-BR")), produto.Preco.Moeda),
-            new ImagemResponse(produto.Imagem.Url),
-            new ClassificacaoResponse(produto.Classificacao.Valor),
+            produto.Preco.Valor.ToString("C", new CultureInfo("pt-BR")),
+            produto.Classificacao.Valor,
             produto.Especificacoes
         );
 
@@ -119,7 +119,18 @@ public class ProdutosController : MainController
             new Dictionary<string, string>(dto.Especificacoes)
         ));
 
-        return Created($"api/v1/produtos/{produto.Id}", produto);
+        var produtoResult = new ProdutosResponse
+        (
+            produto.Id,
+            produto.Nome,
+            produto.Imagem.Url,
+            produto.Descricao,
+            produto.Preco.Valor.ToString("C", new CultureInfo("pt-BR")),
+            produto.Classificacao.Valor,
+            produto.Especificacoes
+        );
+
+        return Created($"api/v1/produtos/{produto.Id}", produtoResult);
     }
 
     /// <summary>
